@@ -1,0 +1,39 @@
+/* Reset default margin and padding for the body element */
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+/* Apply styles to the background video container */
+.background-video {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Style the video element to cover the entire container */
+.background-video video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Style the content container to center the website content and make text magenta */
+.content {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	color: magenta; /* Change text color to magenta */
+	font-family: Times New Roman, sans-serif;
+}
+
+/* Additional styles can be added as needed */

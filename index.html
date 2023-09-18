@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - VISUAL ARTS</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Apply styles to make the video fullscreen */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            /* Hide scrollbars */
+        }
+
+        /* Apply styles to center the video */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Remove video controls and autoplay */
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Cover the entire screen without stretching */
+        }
+
+        /* Style for content */
+        .content {
+            position: relative;
+            z-index: 1;
+            /* Place content above the video */
+            text-align: center;
+            padding: 20px;
+            color: #ffffff; /* Set the text color to white */
+        }
+
+        /* Style for headings */
+        h1 {
+            color: magenta; /* Set heading text color to magenta */
+        }
+      h2 {
+        color: Blue;
+      }
+        /* Style for links */
+        a {
+            color: #228B22; /* Set link text color to orange */
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        /* Style for the paragraph */
+        p {
+            color: magenta; /* Set paragraph text color to magenta */
+        }
+    </style>
+    <title>Fullscreen Background Video</title>
+</head>
+
+<body>
+    <div class="background-video">
+        <video autoplay loop muted>
+            <source src="https://shorturl.at/gpDW7" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>🌐"VI$UAL ART$"🌐</h1>
+        <h2>"THE GODFATHER OF ART"</h2>
+        <ul>
+            <li>
+                <h3><a href="https://wxvybone.github.io/CONSTRUCTION/">"VI$UAL ART FOR DUMMIE$"</a></h3>
+            </li>
+            <li>
+                <h3><a href="https://wxvybone.github.io/CONSTRUCTION/">"OUR FAV VI$UAL ART PIECE$"</a></h3>
+            </li>
+            <li>
+                <h3><a href="https://wxvybone.github.io/CONSTRUCTION/">"VI$UAL ARTI$T$ & THEIR WORK$"</a></h3>
+            </li>
+            <li>
+                <h3><a id="randomRedirectLink" href="#">$URPRISE ME</a></h3>
+            </li>
+        </ul>
+  
+  
+    <div class="return">
+        <h4><a href="#" onclick="goBack()">"Return to WXVY'S WORLD"</a></h4>
+    </div>
+
+    <script>
+        // Function to navigate back in the browsing history
+        function goBack() {
+            window.history.back();
+        }
+
+        // Array of preselected URLs
+        const links = [
+          'https://youtu.be/LEnYpLaWW0k?t=1033',
+'https://youtu.be/wwaj3rP94Rc?si=Qp5Y1eoYJNVJeH4P',
+'https://youtu.be/rGZVBTVrGb8?si=GGzZe1t3PZjodBvk',  
+'https://youtu.be/ERyB5jd0jUo?si=tHN4ZuFo7fVfe8k4', 
+'https://youtu.be/KlyXNRrsk4A?si=_bpWu0h1dSYnqKWD', 
+'https://youtu.be/sOnqjkJTMaA?si=jFhdceoc9PFymhJX', 
+'https://youtu.be/yEG2VTHS9yg?si=KzE9CEyPDEuvKFNh', 
+'https://youtu.be/u35WIs62R2M?si=M7Y-pjCu0o2BG0ft', 
+'https://youtu.be/2WoDQBhJCVQ?si=F9F5zUTxobynTuCr', 
+'https://youtu.be/TUVJZLOogdA?si=9t6jHrq7yd-WzUgT', 
+'https://youtu.be/6gYBXRwsDjY?si=UUdFHsqLp39QhXIp', 
+'https://youtu.be/IiNKab5RaZQ?si=acLJkuW-1-nXHYeH',
+"https://youtu.be/wiXxwYFccQE?si=lgni9xwTB1VuyXDa", 
+"https://youtu.be/bm03wqLY3Nc?si=hlwxVCsuVdOZjQmU", 
+'https://youtu.be/iLJNSD3H5sg?si=zfrVNVNEZO3r5x8l',          'https://youtu.be/wb9lYDzxIXA?si=luNVtpWPdEaCKyL-',
+          'https://youtu.be/e4lI8e33U2A?si=neIvB6xFAcPMmRBW',
+          'https://youtu.be/g9E4q5JCeXs?si=HGObOMMJuWUzRZvq',
+            // Your list of URLs here
+        ];
+
+        // Variable to store the previously selected URL
+        let previousURL = null;
+
+        // Function to generate a random index that is not the same as the previous one
+        function getRandomIndexWithoutDuplicate() {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * links.length);
+            } while (randomIndex === previousURL);
+            previousURL = randomIndex;
+            return randomIndex;
+        }
+
+        // Function to redirect to a random link in a new tab
+        function redirectToRandomLink(event) {
+            // Prevent the default behavior of the anchor element (preventing it from navigating)
+            event.preventDefault();
+
+            // Get a random index that is not the same as the previous one
+            const randomIndex = getRandomIndexWithoutDuplicate();
+
+            // Get the random URL based on the random index
+            const randomURL = links[randomIndex];
+
+            // Open the random URL in a new tab
+            window.open(randomURL, '_blank');
+        }
+
+        // Add a click event listener to the anchor link
+        document.getElementById("randomRedirectLink").addEventListener("click", redirectToRandomLink);
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
