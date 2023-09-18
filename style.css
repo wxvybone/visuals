@@ -1,3 +1,4 @@
+/* Reset default margin and padding for the body element */
 body {
 	margin: 0;
 	padding: 0;
@@ -36,7 +37,3 @@ body {
 }
 
 /* Additional styles can be added as needed */
-.return {
-  position: relative;
-  height: 20vh;
-}
